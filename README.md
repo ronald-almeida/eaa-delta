@@ -1,6 +1,6 @@
 # Checkout EAA Delta
 
-Checkout responsivo do **Combo Vitalício EAA DELTA**, por **R$ 599,40**, com Pix pela Black Cat. Layout baseado na referência fornecida, logo do produto e SVG Hotmart no topo enviados pelo usuário. Fontes Hotmart Sans / Hotmart Display carregadas do CDN público da Hotmart, com os fallbacks solicitados. O processamento é Black Cat.
+Checkout responsivo do **Combo Vitalício EAA DELTA**, por **R$ 347,00**, com Pix pela Black Cat. Layout baseado na referência fornecida, logo do produto e SVG Hotmart no topo enviados pelo usuário. Fontes Hotmart Sans / Hotmart Display carregadas do CDN público da Hotmart, com os fallbacks solicitados. O processamento é Black Cat.
 
 ## Publicar na Vercel
 
@@ -33,7 +33,7 @@ npm run build
 
 - Valida email, confirmação, nome, CPF/CNPJ com dígitos verificadores e telefone.
 - `POST /api/pix` cria a venda em `https://api.blackcatoficial.com/api/sales/create-sale` usando o header privado `X-API-Key`.
-- O servidor fixa `amount: 59940`, título do produto e valor unitário. Valores enviados pelo navegador são ignorados.
+- O servidor fixa `amount: 34700`, título do produto e valor unitário. Valores enviados pelo navegador são ignorados.
 - O pop-up exibe `paymentData.copyPaste` (ou `qrCode`), imagem `qrCodeBase64` e validade. Se a imagem não vier, mantém disponível o código copia e cola.
 - Copiar usa a área de transferência; em caso de bloqueio, seleciona o texto para cópia manual.
 - O status é consultado a cada 12 segundos enquanto o pop-up estiver aberto e a aba visível, além da consulta manual. `PAID` só é exibido após confirmação da API e conferência da transação e do valor.

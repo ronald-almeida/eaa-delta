@@ -8,7 +8,7 @@ const originalFetch = globalThis.fetch;
 const originalKey = process.env.BLACKCAT_API_KEY;
 afterEach(() => { globalThis.fetch = originalFetch; if (originalKey === undefined) delete process.env.BLACKCAT_API_KEY; else process.env.BLACKCAT_API_KEY = originalKey; });
 const customer = () => ({ name:'Cliente de Teste', email:'teste@example.com', emailConfirm:'teste@example.com', document:'529.982.247-25', phone:'(11) 99999-9999', requestId:randomUUID() });
-const providerSale = (extra = {}) => ({ success:true, data:{ transactionId:'TXN-TEST-001', amount:59940, status:'PENDING', paymentData:{ copyPaste:'000201-PIX-DE-TESTE-NAO-PAGAR', qrCodeBase64:'data:image/png;base64,aGVsbG8=', expiresAt:'2030-10-28T12:00:00.000Z' }, ...extra } });
+const providerSale = (extra = {}) => ({ success:true, data:{ transactionId:'TXN-TEST-001', amount:34700, status:'PENDING', paymentData:{ copyPaste:'000201-PIX-DE-TESTE-NAO-PAGAR', qrCodeBase64:'data:image/png;base64,aGVsbG8=', expiresAt:'2030-10-28T12:00:00.000Z' }, ...extra } });
 function provider(response = providerSale(), inspect = () => {}) {
   process.env.BLACKCAT_API_KEY = 'test-only-not-a-real-key';
   globalThis.fetch = async (url, options) => { inspect(url, options); return new Response(JSON.stringify(response), { status:200, headers:{'Content-Type':'application/json'} }); };
@@ -36,7 +36,7 @@ test('server fixes amount and product regardless of browser input; sends Black C
     assert.equal(body.paymentMethod,'pix'); assert.equal(body.customer.document.type,'cpf');
   });
   const result = await createPayment({ ...customer(), amount:1, items:[] });
-  assert.equal(result.amount,59940); assert.match(result.code,/^000201/);
+  assert.equal(result.amount,34700); assert.match(result.code,/^000201/);
   assert.ok(result.token); assert.equal(JSON.stringify(result).includes('test-only-not-a-real-key'), false);
 });
 test('duplicate concurrent requests reuse the same in-memory request', async () => {
