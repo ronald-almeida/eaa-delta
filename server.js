@@ -7,7 +7,8 @@ const files = new Map([
   ['/', ['index.html', 'text/html; charset=utf-8']],
   ['/styles.css', ['styles.css', 'text/css; charset=utf-8']],
   ['/checkout.js', ['checkout.js', 'text/javascript; charset=utf-8']],
-  ['/logo-delta.png', ['logo-delta.png', 'image/png']]
+  ['/logo-delta.png', ['logo-delta.png', 'image/png']],
+  ['/logo-hotmart.svg', ['logo-hotmart.svg', 'image/svg+xml']]
 ]);
 const config = JSON.parse(await readFile(new URL('./vercel.json', import.meta.url)));
 const server = createServer(async (req, res) => {

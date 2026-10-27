@@ -1,6 +1,6 @@
 # Checkout EAA Delta
 
-Checkout responsivo do **Combo Vitalício EAA DELTA**, por **R$ 599,40**, com Pix pela Black Cat. Layout baseado na referência fornecida, logo original e fontes Hotmart Sans / Hotmart Display carregadas do CDN público da Hotmart, com os fallbacks solicitados. A identificação visual é EAA Delta; o processamento é Black Cat.
+Checkout responsivo do **Combo Vitalício EAA DELTA**, por **R$ 599,40**, com Pix pela Black Cat. Layout baseado na referência fornecida, logo do produto e SVG Hotmart no topo enviados pelo usuário. Fontes Hotmart Sans / Hotmart Display carregadas do CDN público da Hotmart, com os fallbacks solicitados. O processamento é Black Cat.
 
 ## Publicar na Vercel
 
