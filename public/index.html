@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f4f0">
+  <meta name="description" content="Adquira o Combo Vitalício EAA DELTA por R$ 599,40. Pagamento via Pix.">
+  <title>Combo Vitalício EAA DELTA — Checkout</title>
+  <link rel="icon" href="/logo-delta.png" type="image/png">
+  <link rel="preconnect" href="https://static.hotmart.com" crossorigin>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/checkout.js" type="module"></script>
+</head>
+<body>
+  <main class="checkout">
+    <header class="topbar"><span class="brand"><span class="delta-mark" aria-hidden="true">Δ</span> escola aa <strong>DELTA</strong></span><span class="secure"><svg aria-hidden="true"><use href="#lock"/></svg> Checkout seguro</span></header>
+    <div class="content">
+      <div class="country"><span class="flag" aria-hidden="true">🇧🇷</span> Brasil <span class="currency">BRL</span></div>
+      <section class="product" aria-labelledby="product-title">
+        <img class="product-logo" src="/logo-delta.png" alt="Escola AA Delta" width="116" height="116">
+        <div><h1 id="product-title">Combo Vitalício EAA DELTA</h1><p class="author">Autor: Porto Holding</p><p class="price">R$ 599,40</p><p class="price-caption">Pagamento único via Pix</p></div>
+      </section>
+      <form id="checkout-form">
+        <section class="personal" aria-labelledby="personal-title">
+          <h2 id="personal-title">Dados pessoais</h2>
+          <div class="field"><label for="email">Seu email</label><input id="email" name="email" type="email" autocomplete="email" placeholder="Digite seu email para receber a compra" maxlength="254" required></div>
+          <div class="field"><label for="email-confirm">Confirme seu email</label><input id="email-confirm" name="emailConfirm" type="email" autocomplete="off" placeholder="Digite novamente seu email" maxlength="254" required></div>
+          <div class="field"><label for="name">Nome completo</label><input id="name" name="name" autocomplete="name" placeholder="Digite seu nome completo" maxlength="120" required></div>
+          <div class="field-row">
+            <div class="field"><label for="document">CPF/CNPJ</label><input id="document" name="document" inputmode="numeric" autocomplete="off" placeholder="Digite o número do seu CPF ou CNPJ" maxlength="18" required></div>
+            <div class="field"><label for="phone">Celular</label><div class="phone-input"><span class="dial-code"><small>BR</small> +55 <span aria-hidden="true">⌄</span></span><input id="phone" name="phone" type="tel" autocomplete="tel-national" placeholder="(11) 96123-4567" maxlength="15" required></div></div>
+          </div>
+        </section>
+        <section class="payment" aria-labelledby="payment-title">
+          <h2 id="payment-title">Escolha a forma de pagamento</h2>
+          <div class="payment-box">
+            <div class="payment-header"><span class="radio-dot" aria-hidden="true"></span><svg class="pix-icon" aria-hidden="true"><use href="#pix"/></svg><strong>Pix</strong><span class="selected-label">Aprovação rápida</span></div>
+            <div class="payment-body">
+              <div class="payment-actions"><p class="payment-note"><svg aria-hidden="true"><use href="#check"/></svg><span>Use o Pix para concluir sua compra.<br>O pagamento é confirmado automaticamente.</span></p><button class="primary generate-button" type="submit"><svg aria-hidden="true"><use href="#qr"/></svg><span>Gerar código QR</span></button><button class="secondary" type="button" id="open-copy">Copiar código Pix</button></div>
+              <svg class="qr-decoration" aria-hidden="true"><use href="#qr"/></svg>
+            </div>
+          </div>
+          <p id="form-error" class="error" role="alert" hidden></p>
+          <details class="more"><summary><span class="show-more">Mostrar mais</span><span class="show-less">Mostrar menos</span><span class="chevron" aria-hidden="true"></span></summary><p>Gere o código, abra o aplicativo do seu banco e escolha Pix. Você pode escanear o QR Code ou usar a opção “Pix Copia e Cola”. Confira o valor e os dados do recebedor antes de confirmar.</p></details>
+        </section>
+      </form>
+      <section class="purchase-details" aria-labelledby="details-title"><h2 id="details-title">Detalhes da compra</h2><div class="order-line"><strong>Combo Vitalício EAA DELTA</strong><span>R$ 599,40</span></div></section>
+      <footer><svg aria-hidden="true"><use href="#lock"/></svg><span>Pagamento processado por <strong>Black Cat</strong></span></footer>
+    </div>
+  </main>
+  <dialog id="pix-dialog" aria-labelledby="modal-title" aria-describedby="modal-description">
+    <button type="button" class="close-modal" id="close-modal" aria-label="Fechar pop-up">×</button>
+    <div class="modal-icon"><svg aria-hidden="true"><use href="#pix"/></svg></div>
+    <h2 id="modal-title">Pague com Pix</h2><p id="modal-description">Escaneie o QR Code ou copie o código abaixo.</p><p class="modal-price">R$ 599,40</p>
+    <div id="qr-frame" class="qr-frame"><img id="pix-image" alt="QR Code para pagar R$ 599,40" width="208" height="208"></div>
+    <p id="expires-at" class="expires"></p>
+    <label for="pix-code" class="code-label">Código Pix Copia e Cola</label><textarea id="pix-code" rows="2" readonly spellcheck="false"></textarea>
+    <button class="primary copy-button" type="button" id="copy-pix"><svg aria-hidden="true"><use href="#copy"/></svg><span>Copiar código Pix</span></button>
+    <p id="copy-feedback" class="copy-feedback" role="status" aria-live="polite"></p>
+    <p id="payment-status" class="payment-status" role="status"><span class="status-dot"></span><span id="status-text">Aguardando pagamento</span></p>
+    <button type="button" id="check-status" class="text-button">Já paguei, verificar pagamento</button><button type="button" id="new-pix" class="text-button" hidden>Gerar um novo Pix</button><p id="status-feedback" class="status-feedback" role="status"></p>
+    <p class="modal-footnote">No aplicativo do banco, confira o valor e o recebedor antes de pagar.</p>
+  </dialog>
+  <svg class="svg-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+    <symbol id="lock" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="10" width="14" height="11" rx="3"/><path d="M8 10V7a4 4 0 0 1 8 0v3M12 14v3"/></g></symbol>
+    <symbol id="check" viewBox="0 0 24 24"><path d="m3 12 6 6L21 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="pix" viewBox="0 0 32 32"><path fill="currentColor" d="m13.2 2.6-6 6h3.4c1 0 1.9.4 2.6 1.1l2.3 2.3c.3.3.7.3 1 0l2.3-2.3c.7-.7 1.6-1.1 2.6-1.1h3.4l-6-6a4 4 0 0 0-5.6 0Zm-8 8-2.6 2.6a4 4 0 0 0 0 5.6l2.6 2.6h5.4c.5 0 .9-.2 1.2-.5l2.3-2.3a2.7 2.7 0 0 1 3.8 0l2.3 2.3c.3.3.7.5 1.2.5h5.4l2.6-2.6a4 4 0 0 0 0-5.6l-2.6-2.6h-5.4c-.5 0-.9.2-1.2.5l-2.3 2.3a2.7 2.7 0 0 1-3.8 0l-2.3-2.3c-.3-.3-.7-.5-1.2-.5H5.2Zm2 12.8 6 6a4 4 0 0 0 5.6 0l6-6h-3.4c-1 0-1.9-.4-2.6-1.1L16.5 20c-.3-.3-.7-.3-1 0l-2.3 2.3c-.7.7-1.6 1.1-2.6 1.1H7.2Z"/></symbol>
+    <symbol id="qr" viewBox="0 0 100 100"><g fill="none" stroke="currentColor" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="7" width="33" height="33" rx="7"/><rect x="60" y="7" width="33" height="33" rx="7"/><rect x="7" y="60" width="33" height="33" rx="7"/><path d="M60 93V60h13v20h20V60"/></g><g fill="currentColor"><rect x="18" y="18" width="11" height="11" rx="3"/><rect x="71" y="18" width="11" height="11" rx="3"/><rect x="18" y="71" width="11" height="11" rx="3"/><rect x="70" y="88" width="10" height="10" rx="3"/><rect x="88" y="88" width="10" height="10" rx="3"/></g></symbol>
+    <symbol id="copy" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><rect x="8" y="8" width="12" height="13" rx="2"/><path d="M16 8V4a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h3"/></g></symbol>
+  </defs></svg>
+</body>
+</html>
